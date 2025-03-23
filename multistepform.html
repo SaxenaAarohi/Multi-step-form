@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+        }
+        .card1,.card2,.card3{
+            height: 300px;
+            width: 200px;
+            box-shadow: 1px 1px 2px;
+            background-color: rgb(123, 158, 188);
+            padding-top: 10px;
+            display: block;
+        }
+        input{
+            margin-top: 5px;
+            padding-top: 4px;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+       .label{
+        margin-left: 5px;
+       }
+       button{
+        width: auto;
+        background-color: black;
+        color: white;
+        border-radius: 6px;
+        padding: 2px;
+        margin-top: 130px;
+     
+       }
+     .card2,.card3{
+        display: none;
+     }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <div class="card1">
+                <h1>Personal Info</h1>
+                <label for="name" class="label">Name</label>
+               <input type="text" ><br>
+               <label for="age" class="label">Age</label><br>
+               <input type="text">
+               <button onclick="prev(1)"> Pev</button>
+               <button onclick="next(1)">Next</button>
+            </div>
+            <div class="card2">
+                <h1>Acdamic Info</h1>
+                <label for="School" class="label">School</label>
+               <input type="text" ><br>
+               <label for="College" class="label">College</label><br>
+               <input type="text">
+               <button onclick="prev(2)"> Pev</button>
+               <button onclick="next(2)">Next</button>
+            </div>
+            <div class="card3">
+                <h1>Contact info</h1>
+                <label for="School" class="label">Phone no</label>
+               <input type="text" ><br>
+               <label for="College" class="label">Address</label><br>
+               <input type="text">
+               <button onclick="prev(3)"> Pev</button>
+               <button onclick="next(3)">Next</button>
+               <button type="submit">Submit</button>
+            </div>
+        </div>
+      
+
+    </div>
+    <script>
+        function next(ind){
+            if(ind==3){
+                document.querySelector(`.card${ind}`).style.display="block";
+            }
+            else{
+                document.querySelector(`.card${ind}`).style.display="none";
+                document.querySelector(`.card${ind+1}`).style.display="block";
+            }
+       
+        }
+        function  prev(ind){
+            if(ind==1){
+                document.querySelector(`.card${ind}`).style.display="block";
+            }
+            else{
+                document.querySelector(`.card${ind}`).style.display="none";
+            document.querySelector(`.card${ind-1}`).style.display="block";
+        }
+            }
+           
+      
+    </script>
+</body>
+</html>
